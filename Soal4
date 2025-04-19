@@ -16,7 +16,41 @@ int main() {
         return 0;
     }
         
-
     int poinA = 0, poinB = 0, streakA = 0, streakB = 0;
+
+    for (char babak : s) {
+        if (babak == 'A') {
+            streakA++;
+            streakB = 0;
+        } 
+        else if (babak == 'B') {
+            streakB++;
+            streakA = 0;
+        } 
+        else { 
+            streakA = 0;
+            streakB = 0;
+        }
+
+
+        if (babak == 'A') {
+            poinA += 3;
+        }
+        else if (babak == 'B') {
+            poinB += 3; 
+        } 
+        else {
+            poinA += 1;
+            poinB += 1;
+        }
+
+
+        if (streakA >= 3) {
+            poinA += 2;
+        }
+        if (streakB >= 3) {
+            poinB += 2;
+        }
+    }
 
 }
