@@ -1,1 +1,22 @@
-//Kerjakan soal nomor 4 disini (Hapus komentar ini)
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int n;
+    string s;
+
+    cout << "N: ";
+    cin >> n;
+    cout << "S: "; 
+    cin >> s;
+
+    if (s.length() != n) {
+        cout << "Jumlah pemenang tiap babak tidak sesuai dengan jumlah babak" << endl;
+        return 0;
+    }
+        
+
+    int poinA = 0, poinB = 0, streakA = 0, streakB = 0;
+
+}
