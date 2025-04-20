@@ -33,6 +33,34 @@ int main() {
     }
     cout << "Nomor Kartu Digital: " << nomorKartu << endl;
     cout << "Tipe Kartu Digital: " << tipeKartu << endl;
-    
-}
 
+    //Algoritma Validasi Nusantara
+        while (nomorKartu > 0) {
+            digit = nomorKartu % 10;
+    
+                if (posisi % 2 == 0) { 
+                digit = digit * 2; 
+                    if (digit > 9) {
+                        int angkaKanan = digit % 10;
+                        int angkaKiri = digit / 10;
+                        digit = angkaKanan + angkaKiri; 
+                    }
+                jumlahGenap = jumlahGenap + digit;
+            } 
+            else { 
+                jumlahGanjil = jumlahGanjil + digit; 
+            } 
+            nomorKartu = nomorKartu / 10; 
+            posisi++; 
+        }
+    
+        totalGanjilDanGenap = jumlahGanjil + jumlahGenap;
+        if (totalGanjilDanGenap % 10 == 0) { 
+            cout << "Nomor Kartu VALID" << endl;
+        } 
+        else {
+            cout << "Nomor Kartu TIDAK VALID" << endl;
+        }
+    
+        return 0;
+}
