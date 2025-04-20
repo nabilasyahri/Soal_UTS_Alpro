@@ -109,3 +109,39 @@ int main() {
 
     return 0;
 }
+
+/*
+--------------------------------- PENJELASAN LOGIKA PROGRAM -----------------------------
+    1. Program meminta pengguna memasukkan kode parkir digital (10 digit) dan jam keluar (format HHMM).
+    2. Menggunakan loop untuk memisahkan digit dari kode parkir dimana menggunakan variabel i untuk
+       menentukan posisi digit yang sedang diproses dimulai dari sebelah kanan lalu setelah diproses kode parkir dibagi 10
+       lalu i dijumlahkan 1.
+        -Jika i = 1 sampai 4, digit tersebut disimpan dalam variabel lokasiParkir dengan
+         mengalikan digit dengan 1, 10, 100, dan 1000 sesuai posisinya.
+        -Jika i = 5 sampai 6, digit tersebut disimpan dalam variabel menitMasuk dengan mengalikan digit
+         dengan 1 dan 10 sesuai posisinya.
+        -Jika i = 7 sampai 8, digit tersebut disimpan dalam variabel jamMasuk dengan mengalikan digit
+         dengan 1 dan 10 sesuai posisinya.
+        -Jika i = 9 sampai 10, digit tersebut disimpan dalam variabel jenisKendaraan dengan mengalikan
+         digit dengan 1 dan 10 sesuai posisinya.
+    3. Output "--- Ringkasan Parkir ---" untuk menandakan judul ringkasan parkir.
+    4. Menghitung durasi parkir dengan cara membandingkan jam keluar dan jam masuk, jika jam keluar lebih kecil dari jam masuk
+       atau jam keluar sama dengan jam masuk dan menit keluar lebih kecil dari menit masuk, maka durasi parkir dihitung dengan 
+       rumus (24 * 60 - (jamMasuk * 60 + menitMasuk)) + (jamKeluar * 60 + menitKeluar). Jika tidak maka durasi parkir dihitung 
+       dengan rumus (jamKeluar * 60 + menitKeluar) - (jamMasuk * 60 + menitMasuk).
+    5. Menghitung durasi jam dan menit dari durasi parkir dengan cara membagi durasi parkir dengan 60 untuk mendapatkan jam
+       dan menggunakan modulus 60 untuk mendapatkan menit. Jika durasi menit lebih besar dari 0, maka durasi jam ditambah 1 
+       (pembulatan keatas), lalu durasi jam dimasukkan ke dalam variabel durasiParkir.
+    6. kode yang disimpan pada variabel jenisKendaraan digunakan untuk menentukan jenis kendaraan dan variabel
+       durasiParkir digunakan untuk menentukan total biaya parkir tersebut.
+       - Jika jenisKendaraan = 10 maka jenis kendaraan adalah Mobil, jika durasi parkir lebih dari 1 jam maka total biaya 
+         dihitung dengan rumus (3000 * durasiParkir) + 2000, jika tidak maka total biaya adalah 5000 (atau sesuai satu
+         jam pertamanya).
+       - Jika jenisKendaraan = 20 maka jenis kendaraan adalah Motor, jika durasi parkir lebih dari 1 jam maka total biaya
+         dihitung dengan rumus (2000 * durasiParkir) + 1000, jika tidak maka total biaya adalah 3000 (atau sesuai satu
+         jam pertamanya).
+       - Jika jenisKendaraan = 30 maka jenis kendaraan adalah Bus, jika durasi parkir lebih dari 1 jam maka total biaya
+         dihitung dengan rumus (7000 * durasiParkir) + 3000, jika tidak maka total biaya adalah 10000 (atau sesuai satu
+         jam pertamanya).
+    7. Output ringkasan parkir yang berisi waktu masuk, waktu keluar, durasi parkir, lokasi parkir, dan total biaya.
+*/
