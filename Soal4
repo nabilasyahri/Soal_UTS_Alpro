@@ -69,3 +69,10 @@ int main() {
     return 0;
 }
 
+/* PENJELASAN ALGORITMA PROGRAM
+
+    1. program meminta 2 inputan, n dan s. 
+        n merupakan jumlah babak dan s merupakan pemenang untuk setiap babak.
+        ( contoh: n= 2; s= AB. artinya pemenang babak pertama adalah A dan pemenang babak kedua adalah B).
+    2. selanjutnya program akan melakukan pengecekan apakah jumlah/panjang s sesuai dengan n. 
+        jika tidak sesuai maka program akan diberhentikan. namun, jika jumlah/panjang s sesuai dengan n, program akan dilanjutkan.
