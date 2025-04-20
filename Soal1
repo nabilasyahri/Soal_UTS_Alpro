@@ -63,4 +63,40 @@ int main() {
         }
     
         return 0;
+
+    /*
+    ======================== PENJELASAN ALGORITMA/LOGIKA PROGRAM LENGKAP ========================
+
+    1. program meminta pengguna memasukkan nomor kartu digital (biasanya 14-16 digit).
+
+    2. menggunakan perulangan, dihitung panjang digit kartu dengan cara membagi angka
+       terus-menerus dan menambahkan variabel panjang dengan satu setiap perulangan 
+       hingga tersisa dua digit paling depan. dua digit itu disimpan dalam variabel
+       dan panjangnya lalu ditambah dua.
+
+    3. berdasarkan dua digit awal dan panjang digit, ditentukan tipe kartu:
+       - NUSANTARA (digit awal = 65 dan panjang 14 digit)
+       - GARUDA (digit awal = 77 atau 78 dan panjang 16 digit)
+       - MERDEKA (digit awal = 91 dan panjang 15 digit)
+       - Jika tidak cocok, maka TIDAK DITEMUKAN.
+
+    4. lalu dilakukan validasi nomor kartu menggunakan Algoritma Validasi Nusantara:
+       dengan menggunakan perulangan, setiap digit kartu diperiksa satu per satu.
+       - dimulai dari digit paling kanan (posisi 1), periksa tiap digit satu per satu.
+       - jika posisi digit adalah GENAP (2, 4, 6, dst):
+         a. kalikan digit dengan 2.
+         b. jika hasil > 9 (misalnya 2×6 = 12), jumlahkan digit kanan dan kirinya
+            -> 1 + 2 = 3, dengan cara menggunakan operator modulus dan pembagian untuk
+            mendapatkan angka kanan dan kiri lalu dijumlahkan.
+         c. tambahkan ke variabel jumlahGenap.
+        - jika posisi digit adalah GANJIL (1, 3, 5, dst):
+         a. tambahkan langsung ke variabel jumlahGanjil.
+        - tambahkan posisi dengan 1 dan bagi variabel nomorKartu dengan 10 untuk menghilangkan digit paling kanan.
+       perulangan ini terus dilakukan hingga semua digit diproses.
+
+    5. setelah semua digit diproses, jumlahkan variabel jumlahGenap dan jumlahGanjil.
+
+    6. jika total tersebut habis dibagi 10, maka nomor kartu VALID.
+       jika tidak, maka TIDAK VALID.
+    */
 }
