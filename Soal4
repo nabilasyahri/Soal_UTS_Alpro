@@ -75,4 +75,26 @@ int main() {
         n merupakan jumlah babak dan s merupakan pemenang untuk setiap babak.
         ( contoh: n= 2; s= AB. artinya pemenang babak pertama adalah A dan pemenang babak kedua adalah B).
     2. selanjutnya program akan melakukan pengecekan apakah jumlah/panjang s sesuai dengan n. 
-        jika tidak sesuai maka program akan diberhentikan. namun, jika jumlah/panjang s sesuai dengan n, program akan dilanjutkan.
+        jika tidak sesuai maka program akan diberhentikan. namun, jika jumlah/panjang s sesuai dengan n, 
+        program akan dilanjutkan.
+    3. pendeklarasian variabel dan nilai variabel poinA, poinB(poinA dan poinB menyimpan total poin masing2 pemain), 
+        streakA, dan streakB(streakA dan streakB menyimpan total kemenangan beruntun pemain A dan B) sebagai 0.
+    4. program menggunakan for sebagai perulangan untuk pengecekan kemenangan beruntun dan poin dari pemain A dan B yang dibaca melalui inputan s, (program mendeklarasikannya sebagai 'babak'):
+        a.) program menggunakan if untuk melakukan pengecekan kemenangan beruntun. 
+            1. jika 'babak'= "A", (maksudnya jika elemen dari inputan s yang dibaca= A) maka streak A ditambah (berarti pemain A memiliki kemenangan beruntun) dan streak B= 0 (kemenangan beruntun pemain B direset).
+            2. jika 'babak'= "B", maka streak B ditambah dan streak A= 0.
+            3. jika selain keduanya, streak A dan streak B= 0.
+        b.) selanjutnya program akan melakukan pengecekan untuk menambah poin tiap pemain.
+            1. jika 'babak'= "A", (maksudnya jika elemen dari inputan s yang dibaca= A) maka poin pemain A ditambah 3.
+            2. jika 'babak'= "B", maka poin pemain B ditambah 3.
+            3. selain dari keduanya, poin masing" pemain ditambah 1.
+        c.) lalu program melakukan pengecekan jumlah kemenangan beruntun.
+            1. jika streak pemain A >=3, maka pemain A akan memperoleh 2 poin tambahan. 
+            2. jika streak pemain B >=3, maka pemain B akan memperoleh 2 poin tambahan. 
+        d.) pengecekan terakhir untuk mengecek jumlah poin yang didapatkan tiap pemain.
+            1. jika total poin pemain A lebih besar dari total poin pemain B, maka nilai yang disimpan variabel 'hasilAkhir'=  "Pemenangnya adalah pemain A".
+            2. jika total poin pemain B lebih besar dari total poin pemain A, maka nilai yang disimpan variabel 'hasilAkhir'=  "Pemenangnya adalah pemain B".
+    5. yang terakhir, program akan mengoutputkan total poin pemain A, total poin pemain B, 
+        dan variabel string dari 'hasilAkhir' yang sudah memiliki nilainya sendiri berdsarkan operasi kondisi yang udah diproses tadi.
+    */
+

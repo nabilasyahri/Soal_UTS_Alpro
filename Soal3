@@ -95,6 +95,22 @@ int main() {
     return 0;
 }
 
+/* 
+Algoritma Program:
+1. Program meminta input kode transaksi berupa 8 digit.
+2. Memeriksa panjang input, jika tidak 8 digit, program meminta input ulang.
+3. Setelah panjang valid, kode transaksi dipecah menjadi digit terpisah:
+   - 2 digit pertama: jenis hari (1: Hari Kerja, 2: Akhir Pekan, 3: Hari Libur Nasional)
+   - 2 digit berikutnya: jenis pelanggan (1: Biasa, 2: Silver, 3: Gold)
+   - 4 digit terakhir: jumlah belanja dalam kelipatan Rp100.000
+4. Memeriksa apakah kode jenis hari dan pelanggan valid. Jika tidak valid, input ulang diminta.
+5. Berdasarkan jenis hari dan pelanggan, hitung poin per Rp100.000 belanja sesuai aturan:
+   - Hari Kerja: Biasa (1), Silver (2), Gold (3)
+   - Akhir Pekan: Biasa (2), Silver (3), Gold (5)
+   - Hari Libur Nasional: Biasa (3), Silver (5), Gold (7)
+6. Menampilkan hasil: jenis hari, jenis pelanggan, jumlah belanja, dan total poin yang dihitung.
+7. Program terus meminta input ulang jika kode transaksi tidak valid.
+*/
 
 
         
