@@ -56,5 +56,33 @@ int main() {
         i++;
     }
 
+     cout << "--- Ringkasan Parkir ---";
+
+    if (jamKeluar < jamMasuk || (jamKeluar == jamMasuk && menitKeluar < menitMasuk)) {
+        durasiParkir = (24 * 60 - (jamMasuk * 60 + menitMasuk)) + (jamKeluar * 60 + menitKeluar);
+    } else {
+        durasiParkir = (jamKeluar * 60 + menitKeluar) - (jamMasuk * 60 + menitMasuk);
+    }
+    
+    int durasiJam = durasiParkir / 60;
+    int durasiMenit = durasiParkir % 60;
+    
+    if (durasiMenit > 0) {
+        durasiJam++;
+    }
+    durasiParkir = durasiJam; 
+
+    switch (jenisKendaraan)
+    {
+    case 10:
+        cout << "\nJenis Kendaraan: Mobil" << endl;
+        if (durasiParkir > 1) {
+            totalBiaya = (3000 * durasiParkir) + 2000;
+        }
+        else {totalBiaya = 5000;}
+        break;
+        
+
+
     return 0;
 }
