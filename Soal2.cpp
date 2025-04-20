@@ -81,8 +81,31 @@ int main() {
         }
         else {totalBiaya = 5000;}
         break;
-        
-
+    case 20:
+        cout << "\nJenis Kendaraan: Motor" << endl;
+        if (durasiParkir > 1) {
+            totalBiaya = (2000 * durasiParkir) + 1000;
+        }
+        else {totalBiaya = 3000;}
+        break;
+    case 30:
+        cout << "\nJenis Kendaraan: Bus" << endl;
+        if (durasiParkir > 1) {
+            totalBiaya = (7000 * durasiParkir) + 3000;
+        }
+        else {totalBiaya = 10000;}
+        break;
+    default:
+        cout << "\nJenis Kendaraan: Tidak Ditemukan" << endl;
+        cout << "Tidak bisa menentukan total biaya parkir" << endl;
+        break;
+    }
+    
+    cout << "Waktu Masuk: " << jamMasuk << ":" << menitMasuk << endl;
+    cout << "Waktu Keluar: " << jamKeluar << ":" << menitKeluar << endl;
+    cout << "Durasi Parkir: " << durasiParkir << " jam" << endl;
+    cout << "Lokasi Parkir: " << lokasiParkir << endl;
+    cout << "Total Biaya: " << "Rp " << totalBiaya << endl;
 
     return 0;
 }
