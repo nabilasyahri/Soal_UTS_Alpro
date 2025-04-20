@@ -53,4 +53,19 @@ int main() {
         }
     }
 
+    string hasilAkhir;
+    if (poinA > poinB) {
+        hasilAkhir = "Pemenangnya adalah pemain A";
+    } else if (poinB > poinA) {
+        hasilAkhir = "Pemenangnya adalah pemain B";
+    } else {
+        hasilAkhir = "Hasil pertandingan Seri!";
+    }
+
+    cout << "Poin A: " << poinA << endl;
+    cout << "Poin B: " << poinB << endl;
+    cout << hasilAkhir << endl;
+
+    return 0;
 }
+
