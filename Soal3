@@ -1,1 +1,49 @@
-//Kerjakan soal nomor 3 disini (Hapus komentar ini)
+#include <iostream>
+using namespace std;
+
+int main() {
+    char kode[9]; // 8 digit + null
+    int i;
+    bool valid = false;
+
+    // Ulangi selama input belum valid
+    while (!valid) {
+        cout << "Masukkan kode transaksi (8 digit): ";
+        cin >> kode;
+
+        // Cek panjang input (harus 8 digit)
+        i = 0;
+        while (kode[i] != '\0') {
+            i++;
+        }
+
+        if (i != 8) {
+            cout << "Kode tidak valid: harus 8 digit.\n" << endl;
+            continue; // kembali ke atas loop untuk input ulang
+        }
+
+        // Ambil digit
+        int d1 = kode[0] - '0';
+        int d2 = kode[1] - '0';
+        int d3 = kode[2] - '0';
+        int d4 = kode[3] - '0';
+        int d5 = kode[4] - '0';
+        int d6 = kode[5] - '0';
+        int d7 = kode[6] - '0';
+        int d8 = kode[7] - '0';
+
+        int jenisHari = d1 * 10 + d2;
+        int jenisPelanggan = d3 * 10 + d4;
+
+        // Validasi jenis hari dan pelanggan
+        if (jenisHari < 1 || jenisHari > 3 || jenisPelanggan < 1 || jenisPelanggan > 3) {
+            cout << "Kode tidak valid: jenis hari atau pelanggan salah.\n" << endl;
+            continue; // kembali ke atas loop untuk input ulang
+        }
+
+        // Jika valid, keluar dari loop
+        valid = true;
+
+        // Hitung jumlah belanja
+        int belanjaKode = d5 * 1000 + d6 * 100 + d7 * 10 + d8;
+        int jumlahBelanja = belanjaKode * 100000;
